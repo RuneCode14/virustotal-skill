@@ -9,7 +9,11 @@ Query VirusTotal for threat intelligence on files, URLs, IPs, and domains. Suppo
 
 ## Authentication
 
-Store your API key in `~/.virustotal/apikey` or set `VT_API_KEY` environment variable.
+Store your API key in one of these locations (checked in order):
+
+1. `VT_API_KEY` environment variable
+2. `~/.virustotal/apikey` file
+3. `~/.openclaw/credentials/virustotal-api-key.json` (OpenClaw credentials)
 
 ## Quick Reference
 

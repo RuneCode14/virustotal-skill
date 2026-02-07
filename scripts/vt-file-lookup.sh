@@ -10,7 +10,7 @@ if [ $# -lt 1 ]; then
 fi
 
 HASH="$1"
-APIKEY="${2:-${VT_API_KEY:-$(cat ~/.virustotal/apikey 2>/dev/null || true)}}"
+APIKEY="${2:-${VT_API_KEY:-$(cat ~/.virustotal/apikey 2>/dev/null || jq -r '.token' ~/.openclaw/credentials/virustotal-api-key.json 2>/dev/null || true)}}"
 
 if [ -z "$APIKEY" ]; then
     echo "Error: API key required. Set VT_API_KEY or ~/.virustotal/apikey"
